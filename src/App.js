@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Players from './components/players';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    players: []
+  }
+
+  componentDidMount() {
+    fetch('http://0.0.0.0:5000/stats/api/v1/players/all', { method: 'get', mode: 'cors' })
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ players: data })
+    })
+    .catch(console.log)
+  }
+  render() {
+        return (
+          <Players players={this.state.players} />
+        )
+      }
 }
-
 export default App;
