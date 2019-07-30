@@ -1,0 +1,25 @@
+.formLabels {
+    margin-right: 10px;
+}
+
+
+.formColumn {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.formRow {
+    display: inline-flex;
+    padding: 5px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.formItem {
+    width: 100%;
+}
+
+.inputBox {
+    margin-right: 10px;
+}
