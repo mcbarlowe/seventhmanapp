@@ -22,6 +22,9 @@
 .inputBox {
     margin-right: 10px;
 }
-.selectbox {
-    width: 200px;
+
+.tocInputBox {
+    width: 300px;
+    height: 30px;
+    font-size: 22px;
 }

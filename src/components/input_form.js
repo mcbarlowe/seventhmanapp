@@ -38,7 +38,7 @@ class InputForm extends Component {
               <label class="formLabels">
                 Min TOC:
               </label>
-                <Select isMulti options={players} />
+              <input type="text" class="tocInputBox" />
             </div>
           </div>
         </div>
