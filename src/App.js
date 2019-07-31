@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Players from './components/players';
 import InputForm from './components/input_form';
 class App extends Component {
-   constructor() {
-    super();
+   constructor(props) {
+    super(props);
     this.state = {
       players: [],
     };
@@ -26,8 +26,8 @@ class App extends Component {
           return null;
         return (
         <div>
-          <InputForm />
-          <Players players={players} />
+          <InputForm selectOptions={players}/>
+          <Players players={players.filter(x => x.season == '2019')} />
         </div>
         )
       }

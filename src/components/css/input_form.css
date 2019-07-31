@@ -6,20 +6,22 @@
 .formColumn {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 100%;
 }
 
 .formRow {
-    display: inline-flex;
+    display: flex;
     padding: 5px;
-    align-items: flex-start;
-    justify-content: flex-start;
 }
 
 .formItem {
     width: 100%;
+    padding: 5px;
 }
 
 .inputBox {
     margin-right: 10px;
+}
+.selectbox {
+    width: 200px;
 }
