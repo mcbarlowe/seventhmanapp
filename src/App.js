@@ -5,29 +5,33 @@ class App extends Component {
    constructor(props) {
     super(props);
     this.state = {
-      players: [],
+      data: [],
+      selectOptions: [],
     };
    }
+
+  setNewPlayerData = data => {
+    this.setState({ data: data });
+    console.log(this.state);
+  }
 
   componentDidMount() {
     fetch('http://0.0.0.0:5000/stats/api/v1/players/all', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
-      this.setState({ players: data })
+      this.setState({ data: data, selectOptions: data })
     })
     .catch(console.log)
   }
-  handelSubmit() {
 
-  }
   render() {
-        const {players} = this.state
-        if(!players.length)
+        const {data, selectOptions} = this.state
+        if(!data.length)
           return null;
         return (
         <div>
-          <InputForm selectOptions={players}/>
-          <Players players={players.filter(x => x.season == '2019')} />
+          <InputForm selectOptions={selectOptions} onClick={this.setNewPlayerData}/>
+          <Players players={data} />
         </div>
         )
       }
