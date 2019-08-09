@@ -27,19 +27,38 @@ class InputForm extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    let result = fetch('http://0.0.0.0:5000/stats/api/v1/players/test', { method: 'get', mode: 'cors' })
+    let result_url = 'http://0.0.0.0:5000/stats/api/v1/players/' + this.state.player[0]['value']
+    console.log(this.state.player[0]['value']);
+    let result = fetch(result_url, { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((results) => {this.props.onClick(results)} )
-    console.log(result);
+    console.log(result_url);
   }
 
   render() {
-    const players_arr = [...new Set(this.props.selectOptions.map( item => item.player_name))];
+    //this gets unique playerid player name pairs for select menu
+    let players_arr = [];
+    for (let i=0; i<this.props.selectOptions.length; i++) {
+      if (players_arr.length == 0) {
+        players_arr.push([this.props.selectOptions[i].player_name, this.props.selectOptions[i].player_id]);
+      }
+      else {
+        var counter = 0;
+        for ( let j=0; j< players_arr.length; j++){
+          if ( players_arr[j][1] == this.props.selectOptions[i].player_id) {
+            counter++;
+          }
+        }
+        if (counter == 0) {
+          players_arr.push([this.props.selectOptions[i].player_name, this.props.selectOptions[i].player_id]);
+        }
+      }
+    }
     const season_arr = [...new Set(this.props.selectOptions.map( item => item.season))];
     const team_arr = [...new Set(this.props.selectOptions.map( item => item.teams))];
     const seasons = season_arr.map( season => ({value: String(season), label: String(season)}) );
     const teams = team_arr.map( team => ({value: String(team), label: String(team)}) );
-    const players = players_arr.map( player => ({value: player, label: player}) );
+    const players = players_arr.map( player => ({value: player[1], label: player[0]}) );
     return (
       <form onSubmit={this.onSubmit}>
         <div className="formColumn">

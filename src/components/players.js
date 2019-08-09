@@ -31,7 +31,7 @@ const Players = ({ players }) => {
               </tr>
           {players.map((players) => (
             //the keys are what react determines is rerendered in the new data
-              <tr key={''+players.player_id + players.season}>
+              <tr key={'' + players.player_id + players.season}>
                <td>{ players.season }</td>
                <td>{ players.player_name }</td>
                <td>{ players.teams }</td>
