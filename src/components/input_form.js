@@ -6,14 +6,23 @@ class InputForm extends Component {
   constructor(props) {
     super();
       this.state = {
-        season: '',
+        season: [],
         player: '',
-        team: '',
-        toc: '',
+        team: [],
+        toc: [],
       };
     this.onClick = this.onSubmit.bind(this)
   }
 
+  createUrlString = array => {
+    if (array.length > 0) {
+      return array.join('+');
+    } else if (array.length == 0) {
+      return array[0];
+    } else {
+      return '';
+    }
+  }
 
   handleChangeSeason = season => {
     this.setState({ season });
@@ -27,12 +36,24 @@ class InputForm extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    let result_url = 'http://0.0.0.0:5000/stats/api/v1/players/' + this.state.player[0]['value']
-    console.log(this.state.player[0]['value']);
-    let result = fetch(result_url, { method: 'get', mode: 'cors' })
-    .then(res => res.json())
-    .then((results) => {this.props.onClick(results)} )
-    console.log(result_url);
+    let result_url ='http://0.0.0.0:5000/stats/api/v1/players/submittest/?player=';
+    let test_url = 'http://0.0.0.0:5000/stats/api/v1/players/submittest/?player='
+    if (this.state.player.length > 0) {
+      for (let i = 0; i < this.state.player.length; i++) {
+        console.log(i);
+        console.log(this.state.player.length);
+        if (i == this.state.player.length - 1) {
+          result_url = result_url + this.state.player[i]['value']
+        } else {
+          result_url = result_url + this.state.player[i]['value'] + '+'
+        }
+      }
+
+      let result = fetch(result_url, { method: 'get', mode: 'cors' })
+      .then(res => res.json())
+      .then((results) => {this.props.onClick(results)} )
+      console.log(result_url);
+    }
   }
 
   render() {
