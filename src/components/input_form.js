@@ -36,29 +36,12 @@ class InputForm extends Component {
   }
 
   render() {
-    //this gets unique playerid player name pairs for select menu
-    let players_arr = [];
-    for (let i=0; i<this.props.selectOptions.length; i++) {
-      if (players_arr.length == 0) {
-        players_arr.push([this.props.selectOptions[i].player_name, this.props.selectOptions[i].player_id]);
-      }
-      else {
-        var counter = 0;
-        for ( let j=0; j< players_arr.length; j++){
-          if ( players_arr[j][1] == this.props.selectOptions[i].player_id) {
-            counter++;
-          }
-        }
-        if (counter == 0) {
-          players_arr.push([this.props.selectOptions[i].player_name, this.props.selectOptions[i].player_id]);
-        }
-      }
-    }
-    const season_arr = [...new Set(this.props.selectOptions.map( item => item.season))];
-    const team_arr = [...new Set(this.props.selectOptions.map( item => item.teams))];
-    const seasons = season_arr.map( season => ({value: String(season), label: String(season)}) );
-    const teams = team_arr.map( team => ({value: String(team), label: String(team)}) );
-    const players = players_arr.map( player => ({value: player[1], label: player[0]}) );
+    const season_arr = this.props.seasonOptions;
+    const team_arr = this.props.teamOptions;
+    const player_arr = this.props.playerOptions;
+    const seasons = season_arr.map( season => ({value: String(season.season), label: String(season.season)}) );
+    const teams = team_arr.map( team => ({value: String(team.team_id), label: String(team.abbreviation)}) );
+    const players = player_arr.map( player => ({value: player.player_id, label: player.player_name}) );
     return (
       <form onSubmit={this.onSubmit}>
         <div className="formColumn">

@@ -6,7 +6,9 @@ class App extends Component {
     super(props);
     this.state = {
       data: [],
-      selectOptions: [],
+      teamSelect: [],
+      playerSelect: [],
+      seasonSelect: []
     };
    }
 
@@ -21,16 +23,35 @@ class App extends Component {
     .then((data) => {
       this.setState({ data: data, selectOptions: data })
     })
-    .catch(console.log)
+    .catch(console.log);
+    fetch('http://0.0.0.0:5000/stats/api/v1/teams/all/', { method: 'get', mode: 'cors' })
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ teamSelect: data })
+    })
+    .catch(console.log);
+    fetch('http://0.0.0.0:5000/stats/api/v1/players/distinct/', { method: 'get', mode: 'cors' })
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ playerSelect: data })
+    })
+    .catch(console.log);
+    fetch('http://0.0.0.0:5000/stats/api/v1/seasons/all', { method: 'get', mode: 'cors' })
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ seasonSelect: data })
+    })
+    .catch(console.log);
   }
 
   render() {
-        const {data, selectOptions} = this.state
-        if(!data.length)
+        const {data, teamSelect, playerSelect, seasonSelect} = this.state
+        if(!playerSelect.length)
           return null;
+        console.log(this.state);
         return (
         <div>
-          <InputForm selectOptions={selectOptions} onClick={this.setNewPlayerData}/>
+          <InputForm teamOptions={teamSelect}  playerOptions={playerSelect} seasonOptions={seasonSelect} onClick={this.setNewPlayerData}/>
           <Players players={data} />
         </div>
         )
