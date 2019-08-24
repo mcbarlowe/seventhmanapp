@@ -11,7 +11,7 @@ class InputForm extends Component {
         team: [],
         toc: ''
       };
-    this.onClick = this.onSubmit.bind(this)
+    //this.onClick = this.onSubmit.bind(this)
   }
 
   createUrlString = array => {
@@ -25,13 +25,28 @@ class InputForm extends Component {
   }
 
   handleChangeSeason = season => {
+    if (season === null) {
+      this.setState({season: []});
+    }
+    else{
     this.setState({ season });
+    }
   };
   handleChangePlayer = player => {
+    if (player === null) {
+      this.setState({player: []});
+    }
+    else{
     this.setState({ player });
+    }
   };
   handleChangeTeam = team => {
+    if (team === null) {
+      this.setState({team: []});
+    }
+    else{
     this.setState({ team });
+    }
   };
   handleChangeToc = toc => {
     this.setState({ toc: toc.target.value });
@@ -40,16 +55,16 @@ class InputForm extends Component {
   onSubmit = event => {
     event.preventDefault();
     console.log(this.state);
-    let result_url ='http://0.0.0.0:5000/stats/api/v1/players/submittest/';
-    let test_url = 'http://0.0.0.0:5000/stats/api/v1/players/submittest/' ;
+    let result_url ='http://0.0.0.0:5000/stats/api/v1/players/submittest/?';
+    let test_url = 'http://0.0.0.0:5000/stats/api/v1/players/submittest/?' ;
     if (this.state.player.length > 0) {
       for (let i = 0; i < this.state.player.length; i++) {
         if (i == this.state.player.length - 1 && i != 0) {
           result_url = result_url + this.state.player[i]['value'];
         } else if (i == 0 && this.state.player.length != 1) {
-          result_url = result_url + '?player=' + this.state.player[i]['value'] + '+';
+          result_url = result_url + '&player=' + this.state.player[i]['value'] + '+';
         } else if (i == 0 && this.state.player.length == 1) {
-          result_url = result_url + '?player=' + this.state.player[i]['value'];
+          result_url = result_url + '&player=' + this.state.player[i]['value'];
         } else {
           result_url = result_url + this.state.player[i]['value'] + '+';
         }
