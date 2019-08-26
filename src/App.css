@@ -7,3 +7,16 @@
     text-align: center;
     background: radial-gradient(ellipse, #566D7E 50%, #646D7E 100%);
 }
+.ReactTable .rt-thead .rt-th.-sort-asc,
+.ReactTable .rt-thead .rt-td.-sort-asc {
+    box-shadow: inset 0 3px 0 0 rgba(255, 253, 250, 0.6)
+}
+
+.ReactTable .rt-thead .rt-th.-sort-desc,
+.ReactTable .rt-thead .rt-td.-sort-desc {
+    box-shadow: inset 0 -3px 0 0 rgba(255, 253, 250, 0.6)
+}
+.ReactTable .rt-thead {
+    background: radial-gradient(ellipse, #566D7E 50%, #646D7E 100%);
+    color: hsla(34, 83%, 99%, 1);
+}
