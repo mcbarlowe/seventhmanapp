@@ -140,7 +140,7 @@ class InputForm extends Component {
             </div>
             <div className="formItem">
               <label className="formLabels">
-                Min TOC:
+                Min Time on Court per Game:
               </label>
               <input type="text" className="tocInputBox" onChange={this.handleChangeToc}/>
             </div>
