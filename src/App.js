@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Players from './components/players';
 import InputForm from './components/input_form';
 import ReactTable from 'react-table';
+import {CSVLink, CSVDownload} from 'react-csv';
 import '../node_modules/react-table/react-table.css';
+import './App.css';
 //import dataTable from './components/table_form';
 class App extends Component {
    constructor(props) {
@@ -256,9 +257,18 @@ class App extends Component {
     console.log(this.state);
     return (
     <div>
-      <InputForm teamOptions={teamSelect}  playerOptions={playerSelect} seasonOptions={seasonSelect} onClick={this.setNewPlayerData}/>
-      {/*<Players players={data} />*/}
-      <ReactTable columns={columns} data={this.state.data}></ReactTable>
+      <div>
+        <h1 id="banner">The Seventh Man</h1>
+      </div>
+      <div>
+        <InputForm teamOptions={teamSelect}  playerOptions={playerSelect} seasonOptions={seasonSelect} onClick={this.setNewPlayerData}/>
+        <CSVLink data={this.state.data}>Export Data to CSV</CSVLink>
+        <ReactTable
+          columns={columns}
+          data={this.state.data}
+          noDataText={"No Data Matched Your Criteria"}
+          defaultPageSize={50}></ReactTable>
+      </div>
     </div>
     )
   }
