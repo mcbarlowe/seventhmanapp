@@ -6,7 +6,7 @@ class InputForm extends Component {
   constructor(props) {
     super();
       this.state = {
-        season: [],
+        season: [{label: '2019', value: '2019'}],
         player: [],
         team: [],
         toc: ''
@@ -124,7 +124,7 @@ class InputForm extends Component {
               <label className="formLabels">
                 Season:
               </label>
-              <Select isMulti options={seasons} value={this.state.season} onChange={this.handleChangeSeason}/>
+              <Select isMulti defaulValue={this.state.season} options={seasons} value={this.state.season} onChange={this.handleChangeSeason}/>
             </div>
             <div className="formItem">
               <label className="formLabels">
