@@ -262,7 +262,8 @@ class App extends Component {
       </div>
       <div>
         <InputForm teamOptions={teamSelect}  playerOptions={playerSelect} seasonOptions={seasonSelect} onClick={this.setNewPlayerData}/>
-        <CSVLink data={this.state.data}>Export Data to CSV</CSVLink>
+      {/* TODO: style this button*/}
+        <button><CSVLink data={this.state.data}>Export Data to CSV</CSVLink></button>
         <ReactTable
           columns={columns}
           data={this.state.data}

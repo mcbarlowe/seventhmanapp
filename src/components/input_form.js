@@ -9,19 +9,9 @@ class InputForm extends Component {
         season: [{label: '2019', value: '2019'}],
         player: [],
         team: [],
-        toc: ''
+        toc: '',
+        agg: 'no'
       };
-    //this.onClick = this.onSubmit.bind(this)
-  }
-
-  createUrlString = array => {
-    if (array.length > 0) {
-      return array.join('+');
-    } else if (array.length == 0) {
-      return array[0];
-    } else {
-      return '';
-    }
   }
 
   handleChangeSeason = season => {
@@ -51,6 +41,12 @@ class InputForm extends Component {
   handleChangeToc = toc => {
     this.setState({ toc: toc.target.value });
   };
+  handleChangeRadio = agg => {
+    this.setState({
+      agg: agg.target.value
+    });
+  }
+
 
   onSubmit = event => {
     event.preventDefault();
@@ -144,8 +140,30 @@ class InputForm extends Component {
               </label>
               <input type="text" className="tocInputBox" onChange={this.handleChangeToc}/>
             </div>
+            <div className="formItem">
+              <div className="radioButtons">
+                <div>
+                  <label className="formLabels">
+                    Summarise:
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <input type="radio" value="yes" checked={this.state.agg === "yes"} onChange={this.handleChangeRadio}/>
+                    Aggregate
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <input type="radio" value="no" checked={this.state.agg === "no"} onChange={this.handleChangeRadio}/>
+                    Single
+                  </label>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      {/* TODO: style this button*/}
         <button onClick={this.onSubmit}>Submit</button>
       </form>
     )
