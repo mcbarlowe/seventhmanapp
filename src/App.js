@@ -77,9 +77,9 @@ class App extends Component {
         style: {
           textAlign: "right"
         },
-        width: 150,
-        maxWidth: 150,
-        minWidth: 150
+        width: 125,
+        maxWidth: 125,
+        minWidth: 125
       },
       {
         Header: "GP",
