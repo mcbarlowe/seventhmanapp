@@ -188,8 +188,8 @@ class InputForm extends Component {
                 <Select isMulti options={teams} value={this.state.team} onChange={this.handleChangeTeam}/>
             </div>
             <div className="formItem">
-              <label className="formLabels">
-                Min Time on Court per Game:
+              <label className="tocformLabels">
+                Time in Min per Game:
               </label>
               <input type="text" className="tocInputBox" onChange={this.handleChangeToc}/>
             </div>
@@ -217,7 +217,7 @@ class InputForm extends Component {
           </div>
         </div>
       {/* TODO: style this button*/}
-        <button onClick={this.onSubmit}>Submit</button>
+        <button className="myButton" onClick={this.onSubmit}>Submit</button>
       </form>
     )
   }

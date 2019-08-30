@@ -252,6 +252,13 @@ class App extends Component {
         minWidth: 60
       }
     ]
+    const prettyLink = {
+      border:'none',
+      outline:'none',
+      color:'inherit',
+      textDecoration: 'none'
+    }
+
     if(!playerSelect.length)
       return null;
     console.log(this.state);
@@ -263,7 +270,7 @@ class App extends Component {
       <div>
         <InputForm teamOptions={teamSelect}  playerOptions={playerSelect} seasonOptions={seasonSelect} onClick={this.setNewPlayerData}/>
       {/* TODO: style this button*/}
-        <button><CSVLink data={this.state.data}>Export Data to CSV</CSVLink></button>
+        <button className="myButton"><CSVLink data={this.state.data} style={prettyLink}>Export Data to CSV</CSVLink></button>
         <ReactTable
           columns={columns}
           data={this.state.data}
