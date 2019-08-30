@@ -20,3 +20,13 @@
     background: radial-gradient(ellipse, #566D7E 50%, #646D7E 100%);
     color: hsla(34, 83%, 99%, 1);
 }
+
+.ReactTable .-pagination .-btn {
+    color: hsla(34, 83%, 99%, 1);
+    background: radial-gradient(ellipse, #566D7E 50%, #646D7E 100%);
+}
+.ReactTable .-pagination .-previous,
+.ReactTable .-pagination .-next {
+    background: radial-gradient(ellipse, #566D7E 50%, #646D7E 100%);
+    color: hsla(34, 83%, 99%, 1);
+}
