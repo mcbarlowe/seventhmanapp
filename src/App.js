@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import InputForm from './components/input_form';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import "react-tabs/style/react-tabs.css";
 import ReactTable from 'react-table';
 import {CSVLink, CSVDownload} from 'react-csv';
 import '../node_modules/react-table/react-table.css';
@@ -268,14 +270,25 @@ class App extends Component {
         <h1 id="banner">The Seventh Man</h1>
       </div>
       <div>
-        <InputForm teamOptions={teamSelect}  playerOptions={playerSelect} seasonOptions={seasonSelect} onClick={this.setNewPlayerData}/>
-      {/* TODO: style this button*/}
-        <button className="myButton"><CSVLink data={this.state.data} style={prettyLink}>Export Data to CSV</CSVLink></button>
-        <ReactTable
-          columns={columns}
-          data={this.state.data}
-          noDataText={"No Data Matched Your Criteria"}
-          defaultPageSize={50}></ReactTable>
+        <Tabs>
+          <TabList>
+            <Tab>Players</Tab>
+            <Tab>Teams</Tab>
+          </TabList>
+
+          <TabPanel>
+            <InputForm teamOptions={teamSelect}  playerOptions={playerSelect} seasonOptions={seasonSelect} onClick={this.setNewPlayerData}/>
+            <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
+            <ReactTable
+              columns={columns}
+              data={this.state.data}
+              noDataText={"No Data Matched Your Criteria"}
+              defaultPageSize={50}></ReactTable>
+          </TabPanel>
+          <TabPanel>
+            <p>Team stats will go here</p>
+          </TabPanel>
+        </Tabs>
       </div>
     </div>
     )
