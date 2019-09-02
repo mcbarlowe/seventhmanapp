@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/input_form.css'
+import '../css/input_form.css'
 import Select from 'react-select'
 
 class InputForm extends Component {

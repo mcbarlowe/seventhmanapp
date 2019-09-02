@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import InputForm from './components/input_form';
+//import InputForm from './components/input_form';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
-import ReactTable from 'react-table';
-import {CSVLink, CSVDownload} from 'react-csv';
-import '../node_modules/react-table/react-table.css';
+import PlayerTable from './components/player_table/player_table';
 import './App.css';
-//import dataTable from './components/table_form';
 class App extends Component {
    constructor(props) {
     super(props);
@@ -20,14 +17,13 @@ class App extends Component {
 
   setNewPlayerData = data => {
     this.setState({ data: data });
-    console.log(this.state);
   }
 
   componentDidMount() {
     fetch('http://0.0.0.0:5000/stats/api/v1/players/all/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
-      this.setState({ data: data, selectOptions: data })
+      this.setState({ data: data })
     })
     .catch(console.log);
     fetch('http://0.0.0.0:5000/stats/api/v1/teams/all/', { method: 'get', mode: 'cors' })
@@ -52,218 +48,8 @@ class App extends Component {
 
   render() {
     const {data, teamSelect, playerSelect, seasonSelect} = this.state
-    const columns =  [
-      {
-        Header: "Season",
-        accessor: "season",
-        style: {
-          textAlign: "right"
-        },
-        width: 100,
-        maxWidth: 100,
-        minWidth: 100
-      },
-      {
-        Header: "Player",
-        accessor: "player_name",
-        style: {
-          textAlign: "right"
-        },
-        width: 150,
-        maxWidth: 150,
-        minWidth: 150
-      },
-      {
-        Header: "Teams",
-        accessor: "teams",
-        style: {
-          textAlign: "right"
-        },
-        width: 125,
-        maxWidth: 125,
-        minWidth: 125
-      },
-      {
-        Header: "GP",
-        accessor: "gp",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "MIN",
-        accessor: "mins",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "FGM",
-        accessor: "fgm",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "FGA",
-        accessor: "fga",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "TPM",
-        accessor: "tpm",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "TPA",
-        accessor: "tpa",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "FTM",
-        accessor: "ftm",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "FTA",
-        accessor: "fta",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "OREB",
-        accessor: "oreb",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "DREB",
-        accessor: "dreb",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "AST",
-        accessor: "ast",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "TOV",
-        accessor: "tov",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "STL",
-        accessor: "stl",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "BLK",
-        accessor: "blk",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "PF",
-        accessor: "pf",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      },
-      {
-        Header: "Points",
-        accessor: "points",
-        style: {
-          textAlign: "right"
-        },
-        width: 75,
-        maxWidth: 75,
-        minWidth: 75
-      },
-      {
-        Header: "+/-",
-        accessor: "plus_minus",
-        style: {
-          textAlign: "right"
-        },
-        width: 60,
-        maxWidth: 60,
-        minWidth: 60
-      }
-    ]
-    const prettyLink = {
-      border:'none',
-      outline:'none',
-      color:'inherit',
-      textDecoration: 'none'
-    }
-
     if(!playerSelect.length)
       return null;
-    console.log(this.state);
     return (
     <div>
       <div>
@@ -274,19 +60,23 @@ class App extends Component {
           <TabList>
             <Tab>Players</Tab>
             <Tab>Teams</Tab>
+            <Tab>About</Tab>
           </TabList>
 
           <TabPanel>
-            <InputForm teamOptions={teamSelect}  playerOptions={playerSelect} seasonOptions={seasonSelect} onClick={this.setNewPlayerData}/>
-            <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
-            <ReactTable
-              columns={columns}
-              data={this.state.data}
-              noDataText={"No Data Matched Your Criteria"}
-              defaultPageSize={50}></ReactTable>
+            <PlayerTable
+              seasonSelect={seasonSelect}
+              teamSelect={teamSelect}
+              playerSelect={playerSelect}
+              onClick={this.setNewPlayerData}
+              data={data}
+            />
           </TabPanel>
           <TabPanel>
             <p>Team stats will go here</p>
+          </TabPanel>
+          <TabPanel>
+            <p>Some about material here</p>
           </TabPanel>
         </Tabs>
       </div>
