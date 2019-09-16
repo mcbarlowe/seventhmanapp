@@ -7,7 +7,6 @@ class InputForm extends Component {
     super();
       this.state = {
         season: [{label: '2019', value: '2019'}],
-        player: [],
         team: [],
         toc: '',
         agg: 'no'
@@ -22,14 +21,7 @@ class InputForm extends Component {
     this.setState({ season });
     }
   };
-  handleChangePlayer = player => {
-    if (player === null) {
-      this.setState({player: []});
-    }
-    else{
-    this.setState({ player });
-    }
-  };
+
   handleChangeTeam = team => {
     if (team === null) {
       this.setState({team: []});
@@ -38,34 +30,22 @@ class InputForm extends Component {
     this.setState({ team });
     }
   };
+
   handleChangeToc = toc => {
     this.setState({ toc: toc.target.value });
   };
+
   handleChangeRadio = agg => {
     this.setState({
       agg: agg.target.value
     });
   }
 
-
   onSubmit = event => {
     event.preventDefault();
     console.log(this.state);
     if (this.state.agg === 'no') {
-      let result_url ='http://0.0.0.0:5000/stats/api/v1/players/submittest/?';
-      if (this.state.player.length > 0) {
-        for (let i = 0; i < this.state.player.length; i++) {
-          if (i == this.state.player.length - 1 && i != 0) {
-            result_url = result_url + this.state.player[i]['value'];
-          } else if (i == 0 && this.state.player.length != 1) {
-            result_url = result_url + '&player=' + this.state.player[i]['value'] + '+';
-          } else if (i == 0 && this.state.player.length == 1) {
-            result_url = result_url + '&player=' + this.state.player[i]['value'];
-          } else {
-            result_url = result_url + this.state.player[i]['value'] + '+';
-          }
-        }
-      }
+      let result_url ='http://0.0.0.0:5000/stats/api/v1/teams/submittest/?';
 
       if (this.state.season.length > 0) {
         console.log(this.state.season.length == 0);
@@ -104,7 +84,7 @@ class InputForm extends Component {
         console.log(result_url);
         console.log(this.state);
     } else {
-      let result_url ='http://0.0.0.0:5000/stats/api/v1/players/agg/?';
+      let result_url ='http://0.0.0.0:5000/stats/api/v1/teams/agg/?';
       if (this.state.player.length > 0) {
         for (let i = 0; i < this.state.player.length; i++) {
           if (i == this.state.player.length - 1 && i != 0) {

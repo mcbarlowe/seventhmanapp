@@ -20,12 +20,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://0.0.0.0:5000/stats/api/v1/players/all/', { method: 'get', mode: 'cors' })
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({ data: data })
-    })
-    .catch(console.log);
     fetch('http://0.0.0.0:5000/stats/api/v1/teams/all/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
@@ -68,8 +62,6 @@ class App extends Component {
               seasonSelect={seasonSelect}
               teamSelect={teamSelect}
               playerSelect={playerSelect}
-              onClick={this.setNewPlayerData}
-              data={data}
             />
           </TabPanel>
           <TabPanel>
