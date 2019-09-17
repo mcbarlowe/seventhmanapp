@@ -16,13 +16,43 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 125,
-        maxWidth: 125,
-        minWidth: 125
+        width: 75,
+        maxWidth: 75,
+        minWidth: 75
       },
       {
         Header: "GP",
         accessor: "gp",
+        style: {
+          textAlign: "right"
+        },
+        width: 60,
+        maxWidth: 60,
+        minWidth: 60
+      },
+      {
+        Header: "Wins",
+        accessor: "wins",
+        style: {
+          textAlign: "right"
+        },
+        width: 60,
+        maxWidth: 60,
+        minWidth: 60
+      },
+      {
+        Header: "Points",
+        accessor: "points",
+        style: {
+          textAlign: "right"
+        },
+        width: 60,
+        maxWidth: 60,
+        minWidth: 60
+      },
+      {
+        Header: "PA",
+        accessor: "points_against",
         style: {
           textAlign: "right"
         },
@@ -161,6 +191,16 @@ export const columns =  [
         minWidth: 60
       },
       {
+        Header: "BLKA",
+        accessor: "shots_blocked",
+        style: {
+          textAlign: "right"
+        },
+        width: 60,
+        maxWidth: 60,
+        minWidth: 60
+      },
+      {
         Header: "PF",
         accessor: "pf",
         style: {
@@ -171,14 +211,14 @@ export const columns =  [
         minWidth: 60
       },
       {
-        Header: "Points",
-        accessor: "points",
+        Header: "PFD",
+        accessor: "fouls_drawn",
         style: {
           textAlign: "right"
         },
-        width: 75,
-        maxWidth: 75,
-        minWidth: 75
+        width: 60,
+        maxWidth: 60,
+        minWidth: 60
       },
       {
         Header: "+/-",

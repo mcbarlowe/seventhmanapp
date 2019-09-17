@@ -141,10 +141,8 @@ class InputForm extends Component {
   render() {
     const season_arr = this.props.seasonOptions;
     const team_arr = this.props.teamOptions;
-    const player_arr = this.props.playerOptions;
     const seasons = season_arr.map( season => ({value: String(season.season), label: String(season.season)}) );
     const teams = team_arr.map( team => ({value: String(team.team_id), label: String(team.abbreviation)}) );
-    const players = player_arr.map( player => ({value: player.player_id, label: player.player_name}) );
     return (
       <form onSubmit={this.onSubmit}>
         <div className="formColumn">
@@ -154,12 +152,6 @@ class InputForm extends Component {
                 Season:
               </label>
               <Select isMulti defaulValue={this.state.season} options={seasons} value={this.state.season} onChange={this.handleChangeSeason}/>
-            </div>
-            <div className="formItem">
-              <label className="formLabels">
-                Player:
-              </label>
-              <Select isMulti options={players} value={this.state.player} onChange={this.handleChangePlayer}/>
             </div>
             <div className="formItem">
               <label className="formLabels">

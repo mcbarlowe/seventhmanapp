@@ -3,27 +3,29 @@ import InputForm from './team_input_form';
 import ReactTable from 'react-table';
 import {CSVLink, CSVDownload} from 'react-csv';
 import '../../../node_modules/react-table/react-table.css';
+import { columns } from './team_table_columns';
 
-class PlayerTable extends Component {
+class TeamTable extends Component {
   constructor(props) {
     super();
       this.state = {
-        data: [],
+        data: []
       };
   }
 
-  setNewPlayerData = data => {
+  setNewTeamData = data => {
     this.setState({ data: data });
     console.log(this.state);
   }
 
   componentDidMount() {
-    fetch('http://0.0.0.0:5000/stats/api/v1/teams/all/', { method: 'get', mode: 'cors' })
+    fetch('http://0.0.0.0:5000/stats/api/v1/teams/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ data: data })
     })
     .catch(console.log);
+  }
 
   render() {
     const prettyLink = {
@@ -37,17 +39,16 @@ class PlayerTable extends Component {
             <div>
               <InputForm
                 teamOptions={this.props.teamSelect}
-                playerOptions={this.props.playerSelect}
-                seasonOptions={this.props.seasonSelect} onClick={this.setNewPlayerData}/>
-              <button className="myButton"><CSVLink data={this.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
+                seasonOptions={this.props.seasonSelect} onClick={this.setNewTeamData}/>
+              <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
               <ReactTable
                 columns={columns}
-                data={this.data}
+                data={this.state.data}
                 noDataText={"No Data Matched Your Criteria"}
-                defaultPageSize={50}></ReactTable>
+                defaultPageSize={30}></ReactTable>
             </div>
     )
   }
 }
 
-export default PlayerTable
+export default TeamTable

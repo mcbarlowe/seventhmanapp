@@ -3,21 +3,18 @@ import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import PlayerTable from './components/player_table/player_table';
+import TeamTable from './components/team_table/team_table';
 import './App.css';
 class App extends Component {
    constructor(props) {
     super(props);
     this.state = {
-      data: [],
       teamSelect: [],
       playerSelect: [],
       seasonSelect: []
     };
    }
 
-  setNewPlayerData = data => {
-    this.setState({ data: data });
-  }
 
   componentDidMount() {
     fetch('http://0.0.0.0:5000/stats/api/v1/teams/all/', { method: 'get', mode: 'cors' })
@@ -41,7 +38,7 @@ class App extends Component {
   }
 
   render() {
-    const {data, teamSelect, playerSelect, seasonSelect} = this.state
+    const {teamSelect, playerSelect, seasonSelect} = this.state
     if(!playerSelect.length)
       return null;
     return (
@@ -65,7 +62,10 @@ class App extends Component {
             />
           </TabPanel>
           <TabPanel>
-            <p>Team stats will go here</p>
+            <TeamTable
+              seasonSelect={seasonSelect}
+              teamSelect={teamSelect}
+            />
           </TabPanel>
           <TabPanel>
             <p>Some about material here</p>

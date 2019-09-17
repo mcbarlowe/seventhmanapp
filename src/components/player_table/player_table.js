@@ -33,7 +33,6 @@ class PlayerTable extends Component {
       color:'inherit',
       textDecoration: 'none'
     }
-    console.log(this.state.data);
     return (
             <div>
               <InputForm
