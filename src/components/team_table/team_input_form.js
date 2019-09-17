@@ -31,10 +31,6 @@ class InputForm extends Component {
     }
   };
 
-  handleChangeToc = toc => {
-    this.setState({ toc: toc.target.value });
-  };
-
   handleChangeRadio = agg => {
     this.setState({
       agg: agg.target.value
@@ -61,6 +57,7 @@ class InputForm extends Component {
           }
         }
       }
+
       if (this.state.team.length > 0) {
         for (let i = 0; i < this.state.team.length; i++) {
           console.log(i == 0);
@@ -75,9 +72,6 @@ class InputForm extends Component {
           }
         }
       }
-      if (this.state.toc != '') {
-        result_url = result_url + '&toc=' + this.state.toc;
-      }
         let result = fetch(result_url, { method: 'get', mode: 'cors' })
         .then(res => res.json())
         .then((results) => {this.props.onClick(results)} )
@@ -85,19 +79,6 @@ class InputForm extends Component {
         console.log(this.state);
     } else {
       let result_url ='http://0.0.0.0:5000/stats/api/v1/teams/agg/?';
-      if (this.state.player.length > 0) {
-        for (let i = 0; i < this.state.player.length; i++) {
-          if (i == this.state.player.length - 1 && i != 0) {
-            result_url = result_url + this.state.player[i]['value'];
-          } else if (i == 0 && this.state.player.length != 1) {
-            result_url = result_url + '&player=' + this.state.player[i]['value'] + '+';
-          } else if (i == 0 && this.state.player.length == 1) {
-            result_url = result_url + '&player=' + this.state.player[i]['value'];
-          } else {
-            result_url = result_url + this.state.player[i]['value'] + '+';
-          }
-        }
-      }
 
       if (this.state.season.length > 0) {
         console.log(this.state.season.length == 0);
@@ -126,9 +107,6 @@ class InputForm extends Component {
             result_url = result_url + this.state.team[i]['value'] + '+';
           }
         }
-      }
-      if (this.state.toc != '') {
-        result_url = result_url + '&toc=' + this.state.toc;
       }
         let result = fetch(result_url, { method: 'get', mode: 'cors' })
         .then(res => res.json())
