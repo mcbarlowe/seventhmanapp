@@ -8,7 +8,6 @@ class InputForm extends Component {
       this.state = {
         season: [{label: '2019', value: '2019'}],
         team: [],
-        toc: '',
         agg: 'no'
       };
   }
@@ -39,81 +38,16 @@ class InputForm extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
-    if (this.state.agg === 'no') {
-      let result_url ='http://0.0.0.0:5000/stats/api/v1/teams/submittest/?';
-
-      if (this.state.season.length > 0) {
-        console.log(this.state.season.length == 0);
-        for (let i = 0; i < this.state.season.length; i++) {
-          if (i == this.state.season.length - 1 && i != 0) {
-            result_url = result_url + this.state.season[i]['value'];
-          } else if (i == 0 && this.state.season.length != 1) {
-            result_url = result_url + '&season=' + this.state.season[i]['value'] + '+';
-          } else if (i == 0 && this.state.season.length == 1) {
-            result_url = result_url + '&season=' + this.state.season[i]['value'];
-          } else {
-            result_url = result_url + this.state.season[i]['value'] + '+';
-          }
-        }
-      }
-
-      if (this.state.team.length > 0) {
-        for (let i = 0; i < this.state.team.length; i++) {
-          console.log(i == 0);
-          if (i == this.state.team.length - 1 && i != 0) {
-            result_url = result_url + this.state.team[i]['value'];
-          } else if (i == 0 && this.state.team.length != 1) {
-            result_url = result_url + '&team=' + this.state.team[i]['value'] + '+';
-          } else if (i == 0 && this.state.team.length == 1) {
-            result_url = result_url + '&team=' + this.state.team[i]['value'];
-          } else {
-            result_url = result_url + this.state.team[i]['value'] + '+';
-          }
-        }
-      }
-        let result = fetch(result_url, { method: 'get', mode: 'cors' })
-        .then(res => res.json())
-        .then((results) => {this.props.onClick(results)} )
-        console.log(result_url);
-        console.log(this.state);
-    } else {
-      let result_url ='http://0.0.0.0:5000/stats/api/v1/teams/agg/?';
-
-      if (this.state.season.length > 0) {
-        console.log(this.state.season.length == 0);
-        for (let i = 0; i < this.state.season.length; i++) {
-          if (i == this.state.season.length - 1 && i != 0) {
-            result_url = result_url + this.state.season[i]['value'];
-          } else if (i == 0 && this.state.season.length != 1) {
-            result_url = result_url + '&season=' + this.state.season[i]['value'] + '+';
-          } else if (i == 0 && this.state.season.length == 1) {
-            result_url = result_url + '&season=' + this.state.season[i]['value'];
-          } else {
-            result_url = result_url + this.state.season[i]['value'] + '+';
-          }
-        }
-      }
-      if (this.state.team.length > 0) {
-        for (let i = 0; i < this.state.team.length; i++) {
-          console.log(i == 0);
-          if (i == this.state.team.length - 1 && i != 0) {
-            result_url = result_url + this.state.team[i]['value'];
-          } else if (i == 0 && this.state.team.length != 1) {
-            result_url = result_url + '&team=' + this.state.team[i]['value'] + '+';
-          } else if (i == 0 && this.state.team.length == 1) {
-            result_url = result_url + '&team=' + this.state.team[i]['value'];
-          } else {
-            result_url = result_url + this.state.team[i]['value'] + '+';
-          }
-        }
-      }
-        let result = fetch(result_url, { method: 'get', mode: 'cors' })
-        .then(res => res.json())
-        .then((results) => {this.props.onClick(results)} )
-        console.log(result_url);
-        console.log(this.state);
-    }
+    let result_url ='http://0.0.0.0:5000/stats/api/v1/teams/?';
+    result_url = result_url + '&season=' + this.state.season.map(season => (season.value)).join('+')
+    result_url = result_url + '&team=' + this.state.team.map(team => (team.value)).join('+')
+    result_url = result_url + '&agg=' + this.state.agg
+    console.log(result_url);
+    let result = fetch(result_url, { method: 'get', mode: 'cors' })
+      .then(res => res.json())
+      .then((results) => {this.props.onClick(results)} )
+      console.log(result_url);
+      console.log(this.state);
   }
 
   render() {

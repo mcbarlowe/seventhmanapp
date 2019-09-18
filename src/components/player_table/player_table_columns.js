@@ -1,16 +1,6 @@
 //This is the column headers for the player table object in player_table.js
 export const columns =  [
   {
-    Header: "Season",
-    accessor: "season",
-    style: {
-      textAlign: "right"
-    },
-    width: 100,
-    maxWidth: 100,
-    minWidth: 100
-  },
-  {
     Header: "Player",
     accessor: "player_name",
     style: {
@@ -19,6 +9,16 @@ export const columns =  [
     width: 150,
     maxWidth: 150,
     minWidth: 150
+  },
+  {
+    Header: "Season",
+    accessor: "season",
+    style: {
+      textAlign: "right"
+    },
+    width: 100,
+    maxWidth: 100,
+    minWidth: 100
   },
   {
     Header: "Teams",
