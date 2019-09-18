@@ -17,19 +17,19 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch('http://0.0.0.0:5000/stats/api/v1/teams/all/', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v1/teams/all/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ teamSelect: data })
     })
     .catch(console.log);
-    fetch('http://0.0.0.0:5000/stats/api/v1/players/distinct/', { method: 'get', mode: 'cors' })
+    fetch('http://stats.theseventhman.net/stats/api/v1/players/distinct/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ playerSelect: data })
     })
     .catch(console.log);
-    fetch('http://0.0.0.0:5000/stats/api/v1/seasons/all', { method: 'get', mode: 'cors' })
+    fetch('http://stats.theseventhman.net/stats/api/v1/seasons/all', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ seasonSelect: data })
