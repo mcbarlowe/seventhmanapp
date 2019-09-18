@@ -39,9 +39,9 @@ class InputForm extends Component {
   onSubmit = event => {
     event.preventDefault();
     let result_url ='http://0.0.0.0:5000/stats/api/v1/teams/?';
-    result_url = result_url + '&season=' + this.state.season.map(season => (season.value)).join('+')
-    result_url = result_url + '&team=' + this.state.team.map(team => (team.value)).join('+')
-    result_url = result_url + '&agg=' + this.state.agg
+    result_url = result_url + '&season=' + this.state.season.map(season => (season.value)).join('+');
+    result_url = result_url + '&team=' + this.state.team.map(team => (team.value)).join('+');
+    result_url = result_url + '&agg=' + this.state.agg;
     console.log(result_url);
     let result = fetch(result_url, { method: 'get', mode: 'cors' })
       .then(res => res.json())
@@ -70,12 +70,6 @@ class InputForm extends Component {
                 Team:
               </label>
                 <Select isMulti options={teams} value={this.state.team} onChange={this.handleChangeTeam}/>
-            </div>
-            <div className="formItem">
-              <label className="tocformLabels">
-                Time in Min per Game:
-              </label>
-              <input type="text" className="tocInputBox" onChange={this.handleChangeToc}/>
             </div>
             <div className="formItem">
               <div className="radioButtons">

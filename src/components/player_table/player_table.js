@@ -19,7 +19,7 @@ class PlayerTable extends Component {
   }
 
   componentDidMount() {
-    fetch('http://0.0.0.0:5000/stats/api/v1/players/all/', { method: 'get', mode: 'cors' })
+    fetch('http://0.0.0.0:5000/stats/api/v1/players/?&season=2019&player=&toc=&team=&agg=no', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ data: data })
