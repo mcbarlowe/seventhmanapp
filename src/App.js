@@ -23,13 +23,13 @@ class App extends Component {
       this.setState({ teamSelect: data })
     })
     .catch(console.log);
-    fetch('http://stats.theseventhman.net/stats/api/v1/players/distinct/', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v1/players/distinct/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ playerSelect: data })
     })
     .catch(console.log);
-    fetch('http://stats.theseventhman.net/stats/api/v1/seasons/all', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v1/seasons/all', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ seasonSelect: data })
