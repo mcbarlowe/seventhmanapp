@@ -13,6 +13,7 @@ class PlayerTable extends Component {
       };
   }
 
+
   setNewPlayerData = data => {
     this.setState({ data: data });
   }
@@ -32,11 +33,8 @@ class PlayerTable extends Component {
       color:'inherit',
       textDecoration: 'none'
     }
-    {/*this is for if the data is null its doesn't return a bajillion rows*/}
-    let pageSize = 50;
-    if (this.state.data.length === 0) {
-      pageSize = 10
-    }
+    console.log(this.state);
+
     return (
             <div>
               <InputForm
@@ -48,7 +46,8 @@ class PlayerTable extends Component {
                 columns={columns}
                 data={this.state.data}
                 noDataText={"No Data Matched Your Criteria"}
-                defaultPageSize={pageSize}></ReactTable>
+                minRows={5}
+                defaultPageSize={50}></ReactTable>
             </div>
     )
   }

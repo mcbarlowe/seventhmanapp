@@ -43,11 +43,9 @@ class InputForm extends Component {
     result_url = result_url + '&team=' + this.state.team.map(team => (team.value)).join('+');
     result_url = result_url + '&agg=' + this.state.agg;
     console.log(result_url);
-    let result = fetch(result_url, { method: 'get', mode: 'cors' })
+   fetch(result_url, { method: 'get', mode: 'cors' })
       .then(res => res.json())
       .then((results) => {this.props.onClick(results)} )
-      console.log(result_url);
-      console.log(this.state);
   }
 
   render() {

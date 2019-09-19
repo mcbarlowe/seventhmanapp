@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InputForm from './team_input_form';
 import ReactTable from 'react-table';
-import {CSVLink, CSVDownload} from 'react-csv';
+import {CSVLink} from 'react-csv';
 import '../../../node_modules/react-table/react-table.css';
 import { columns } from './team_table_columns';
 
