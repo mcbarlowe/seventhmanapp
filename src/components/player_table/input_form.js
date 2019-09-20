@@ -69,7 +69,7 @@ class InputForm extends Component {
     const teams = team_arr.map( team => ({value: String(team.team_id), label: String(team.abbreviation)}) );
     const players = player_arr.map( player => ({value: player.player_id, label: player.player_name}) );
     return (
-      <form onSubmit={this.onSubmit}>
+      <form className = "playerForm" onSubmit={this.onSubmit}>
         <div className="formColumn">
           <div className="formRow">
             <div className="formItem">

@@ -46,7 +46,7 @@ class App extends Component {
       <div>
         <h1 id="banner">The Seventh Man</h1>
       </div>
-      <div>
+      <div >
         <Tabs>
           <TabList>
             <Tab>Players</Tab>

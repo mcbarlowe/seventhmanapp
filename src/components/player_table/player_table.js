@@ -6,6 +6,7 @@ import '../../../node_modules/react-table/react-table.css';
 import { columns } from './player_table_columns';
 
 class PlayerTable extends Component {
+
   constructor(props) {
     super();
       this.state = {
@@ -36,19 +37,24 @@ class PlayerTable extends Component {
     console.log(this.state);
 
     return (
-            <div>
+          <div>
+            <div className="input-form">
               <InputForm
                 teamOptions={this.props.teamSelect}
                 playerOptions={this.props.playerSelect}
                 seasonOptions={this.props.seasonSelect} onClick={this.setNewPlayerData}/>
               <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
+            </div>
+            <div className="player-table">
               <ReactTable
                 columns={columns}
                 data={this.state.data}
                 noDataText={"No Data Matched Your Criteria"}
+                resizable={false}
                 minRows={5}
                 defaultPageSize={50}></ReactTable>
             </div>
+          </div>
     )
   }
 }
