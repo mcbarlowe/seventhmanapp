@@ -21,6 +21,16 @@ export const columns =  [
     minWidth: 100
   },
   {
+    Header: "Position",
+    accessor: "position",
+    style: {
+      textAlign: "right"
+    },
+    width: 130,
+    maxWidth: 130,
+    minWidth: 130
+  },
+  {
     Header: "Teams",
     accessor: "teams",
     style: {
