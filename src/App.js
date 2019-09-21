@@ -4,6 +4,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import PlayerTable from './components/player_table/player_table';
 import TeamTable from './components/team_table/team_table';
+import PlayerPossessionTable from './components/player_table/player_possession_table';
+import TeamPossessionTable from './components/team_table/team_possession_table';
 import './App.css';
 class App extends Component {
    constructor(props) {
@@ -80,7 +82,11 @@ class App extends Component {
                 />
               </TabPanel>
               <TabPanel>
-                <p style={pStyle}>I'm working on it as fast as possible</p>
+                <PlayerPossessionTable
+                  seasonSelect={seasonSelect}
+                  teamSelect={teamSelect}
+                  playerSelect={playerSelect}
+                />
               </TabPanel>
               <TabPanel>
                 <p style={pStyle}>These are going to be super advanced because I am smrt</p>
@@ -101,7 +107,10 @@ class App extends Component {
                 />
               </TabPanel>
               <TabPanel>
-                <p style={pStyle}>I couldn't get this done because I didn't want it enough</p>
+                <TeamPossessionTable
+                  seasonSelect={seasonSelect}
+                  teamSelect={teamSelect}
+                />
               </TabPanel>
               <TabPanel>
                 <p style={pStyle}>Why are we talking about advanced stats for teams when the only stat we need is wins baby!</p>
