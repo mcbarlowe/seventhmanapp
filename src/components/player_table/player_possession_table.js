@@ -28,6 +28,7 @@ class PlayerPossessionTable extends Component {
     .catch(console.log);
   }
   render() {
+    const pStyle = {padding: "10px", width: "60%"}
     const prettyLink = {
       border:'none',
       outline:'none',
@@ -45,7 +46,7 @@ class PlayerPossessionTable extends Component {
                 seasonOptions={this.props.seasonSelect} onClick={this.setNewPlayerData}/>
               <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
             </div>
-            <p> These stats are calculated per 100 possesions</p>
+            <p style={pStyle}> These stats are calculated per 100 possesions</p>
             <div className="player-table">
               <ReactTable
                 columns={columns}

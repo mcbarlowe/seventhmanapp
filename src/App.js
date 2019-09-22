@@ -6,7 +6,11 @@ import PlayerTable from './components/player_table/player_table';
 import TeamTable from './components/team_table/team_table';
 import PlayerPossessionTable from './components/player_table/player_possession_table';
 import TeamPossessionTable from './components/team_table/team_possession_table';
+import ReactGA from 'react-ga';
 import './App.css';
+
+
+ReactGA.initialize('UA-148496663-1');
 class App extends Component {
    constructor(props) {
     super(props);
