@@ -28,7 +28,7 @@ class TeamPossessionTable extends Component {
   }
 
   render() {
-    const pStyle = {padding: "10px", width: "60%"}
+    const pStyle = {"padding-left": "100px", width: "60%"}
     const prettyLink = {
       border:'none',
       outline:'none',
@@ -38,16 +38,20 @@ class TeamPossessionTable extends Component {
     console.log(this.state);
     return (
             <div>
-              <PossInputForm
-                teamOptions={this.props.teamSelect}
-                seasonOptions={this.props.seasonSelect} onClick={this.setNewTeamData}/>
-              <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
-            <p style={pStyle}> These stats are calculated per 100 possesions</p>
+              <div className="input-form">
+                <PossInputForm
+                  teamOptions={this.props.teamSelect}
+                  seasonOptions={this.props.seasonSelect} onClick={this.setNewTeamData}/>
+                <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
+              </div>
+              <p style={pStyle}> These stats are calculated per 100 possesions</p>
+              <div className="team-poss-table">
               <ReactTable
                 columns={columns}
                 data={this.state.data}
                 noDataText={"No Data Matched Your Criteria"}
                 defaultPageSize={30}></ReactTable>
+              </div>
             </div>
     )
   }

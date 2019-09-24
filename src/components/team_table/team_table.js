@@ -37,15 +37,19 @@ class TeamTable extends Component {
 
     return (
             <div>
-              <InputForm
-                teamOptions={this.props.teamSelect}
-                seasonOptions={this.props.seasonSelect} onClick={this.setNewTeamData}/>
-              <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
-              <ReactTable
-                columns={columns}
-                data={this.state.data}
-                noDataText={"No Data Matched Your Criteria"}
-                defaultPageSize={30}></ReactTable>
+              <div className="input-form">
+                <InputForm
+                  teamOptions={this.props.teamSelect}
+                  seasonOptions={this.props.seasonSelect} onClick={this.setNewTeamData}/>
+                <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
+              </div>
+              <div className="player-table">
+                <ReactTable
+                  columns={columns}
+                  data={this.state.data}
+                  noDataText={"No Data Matched Your Criteria"}
+                  defaultPageSize={30}></ReactTable>
+              </div>
             </div>
     )
   }
