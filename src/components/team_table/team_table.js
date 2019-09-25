@@ -48,6 +48,7 @@ class TeamTable extends Component {
                   columns={columns}
                   data={this.state.data}
                   noDataText={"No Data Matched Your Criteria"}
+                  resizable={false}
                   defaultPageSize={30}></ReactTable>
               </div>
             </div>

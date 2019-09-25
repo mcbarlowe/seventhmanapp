@@ -49,6 +49,7 @@ class TeamPossessionTable extends Component {
               <ReactTable
                 columns={columns}
                 data={this.state.data}
+                resizable={false}
                 noDataText={"No Data Matched Your Criteria"}
                 defaultPageSize={30}></ReactTable>
               </div>

@@ -26,8 +26,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -36,8 +34,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -46,8 +42,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -56,8 +50,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -66,8 +58,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -76,8 +66,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -86,8 +74,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -96,8 +82,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -106,8 +90,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -116,8 +98,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -126,8 +106,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -136,8 +114,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -146,8 +122,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -156,8 +130,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -166,8 +138,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
       {
@@ -176,8 +146,6 @@ export const columns =  [
         style: {
           textAlign: "right"
         },
-        width: 60,
-        maxWidth: 60,
         minWidth: 60
       },
     ]
