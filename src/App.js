@@ -77,6 +77,8 @@ class App extends Component {
                 <Tab>Per Game Stats</Tab>
                 <Tab>Possession Stats</Tab>
                 <Tab>Advanced Stats</Tab>
+                <Tab>RAPM</Tab>
+                <Tab>3 Year RAPM</Tab>
               </TabList>
               <TabPanel>
                 <PlayerTable
@@ -95,6 +97,12 @@ class App extends Component {
               <TabPanel>
                 <p style={pStyle}>These are going to be super advanced because I am smrt</p>
               </TabPanel>
+              <TabPanel>
+                <p style={pStyle}>Single Season RAPM</p>
+              </TabPanel>
+              <TabPanel>
+                <p style={pStyle}>3 Year RAPM</p>
+              </TabPanel>
             </Tabs>
           </TabPanel>
           <TabPanel>
@@ -103,6 +111,8 @@ class App extends Component {
                 <Tab>Per Game Stats</Tab>
                 <Tab>Possession Stats</Tab>
                 <Tab>Advanced Stats</Tab>
+                <Tab>RAPM</Tab>
+                <Tab>3 Year RAPM</Tab>
               </TabList>
               <TabPanel>
                 <TeamTable
@@ -118,6 +128,12 @@ class App extends Component {
               </TabPanel>
               <TabPanel>
                 <p style={pStyle}>Why are we talking about advanced stats for teams when the only stat we need is wins baby!</p>
+              </TabPanel>
+              <TabPanel>
+                <p style={pStyle}>Single Season RAPM</p>
+              </TabPanel>
+              <TabPanel>
+                <p style={pStyle}>3 Year RAPM</p>
               </TabPanel>
             </Tabs>
           </TabPanel>
