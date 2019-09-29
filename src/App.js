@@ -6,6 +6,7 @@ import PlayerTable from './components/player_table/player_table';
 import TeamTable from './components/team_table/team_table';
 import PlayerPossessionTable from './components/player_table/player_possession_table';
 import TeamPossessionTable from './components/team_table/team_possession_table';
+import PlayerAdvancedTable from './components/player_table/player_advanced';
 import ReactGA from 'react-ga';
 import './App.css';
 
@@ -95,7 +96,10 @@ class App extends Component {
                 />
               </TabPanel>
               <TabPanel>
-                <p style={pStyle}>These are going to be super advanced because I am smrt</p>
+                <PlayerAdvancedTable
+                  seasonSelect={seasonSelect}
+                  playerSelect={playerSelect}
+                />
               </TabPanel>
               <TabPanel>
                 <p style={pStyle}>Single Season RAPM</p>
