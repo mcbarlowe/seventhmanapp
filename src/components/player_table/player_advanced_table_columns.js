@@ -4,7 +4,7 @@ export const columns =  [
     Header: "Player",
     accessor: "display_first_last",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     width: 150,
     maxWidth: 150,
@@ -14,7 +14,7 @@ export const columns =  [
     Header: "Season",
     accessor: "season",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     width: 100,
     maxWidth: 100,
@@ -24,7 +24,7 @@ export const columns =  [
     Header: "Position",
     accessor: "position",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     width: 130,
     maxWidth: 130,
@@ -34,7 +34,7 @@ export const columns =  [
     Header: "Teams",
     accessor: "team_abbrev",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     width: 125,
     maxWidth: 125,
@@ -44,7 +44,7 @@ export const columns =  [
     Header: "eFG%",
     accessor: "efg_percentage",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   },
@@ -52,7 +52,7 @@ export const columns =  [
     Header: "TS%",
     accessor: "true_shooting_percentage",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   },
@@ -60,7 +60,7 @@ export const columns =  [
     Header: "OREB%",
     accessor: "oreb_percentage",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   },
@@ -68,7 +68,7 @@ export const columns =  [
     Header: "DREB%",
     accessor: "dreb_percentage",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   },
@@ -76,7 +76,7 @@ export const columns =  [
     Header: "AST%",
     accessor: "ast_percentage",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   },
@@ -84,7 +84,7 @@ export const columns =  [
     Header: "STL%",
     accessor: "stl_percentage",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   },
@@ -92,7 +92,7 @@ export const columns =  [
     Header: "BLK%",
     accessor: "blk_percentage",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   },
@@ -100,7 +100,7 @@ export const columns =  [
     Header: "TOV%",
     accessor: "tov_percentage",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   },
@@ -108,7 +108,7 @@ export const columns =  [
     Header: "USG%",
     accessor: "usg_percentage",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   },
@@ -116,7 +116,7 @@ export const columns =  [
     Header: "OffRtg",
     accessor: "off_rating",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   },
@@ -124,7 +124,7 @@ export const columns =  [
     Header: "DefRtg",
     accessor: "def_rating",
     style: {
-      textAlign: "right"
+      textAlign: "center"
     },
     minWidth: 60
   }

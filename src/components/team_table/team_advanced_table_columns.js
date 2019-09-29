@@ -4,7 +4,7 @@ export const columns =  [
         Header: "Team",
         accessor: "team_abbrev",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         width: 75,
         maxWidth: 75,
@@ -14,7 +14,7 @@ export const columns =  [
         Header: "Season",
         accessor: "season",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         width: 100,
         maxWidth: 100,
@@ -24,7 +24,7 @@ export const columns =  [
         Header: "eFG%",
         accessor: "efg_percentage",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -32,7 +32,7 @@ export const columns =  [
         Header: "TOV%",
         accessor: "tov_percentage",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -40,7 +40,7 @@ export const columns =  [
         Header: "OREB%",
         accessor: "oreb_percentage",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -48,7 +48,7 @@ export const columns =  [
         Header: "FT/FGA",
         accessor: "ft_per_fga",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -56,7 +56,7 @@ export const columns =  [
         Header: "Opp. eFG%",
         accessor: "opp_efg_percentage",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -64,7 +64,7 @@ export const columns =  [
         Header: "Opp. TOV%",
         accessor: "opp_tov_percentage",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -72,7 +72,7 @@ export const columns =  [
         Header: "DREB%",
         accessor: "dreb_percentage",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -80,7 +80,7 @@ export const columns =  [
         Header: "Opp. FT/FGA",
         accessor: "opp_ft_per_fga",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       }

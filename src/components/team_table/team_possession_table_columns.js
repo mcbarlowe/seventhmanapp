@@ -4,7 +4,7 @@ export const columns =  [
         Header: "Team",
         accessor: "team_abbrev",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         width: 75,
         maxWidth: 75,
@@ -14,7 +14,7 @@ export const columns =  [
         Header: "Season",
         accessor: "season",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         width: 100,
         maxWidth: 100,
@@ -24,7 +24,7 @@ export const columns =  [
         Header: "GP",
         accessor: "gp",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -32,7 +32,7 @@ export const columns =  [
         Header: "Points",
         accessor: "points",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -40,7 +40,7 @@ export const columns =  [
         Header: "MIN",
         accessor: "mins",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -48,7 +48,7 @@ export const columns =  [
         Header: "FGM",
         accessor: "fgm",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -56,7 +56,7 @@ export const columns =  [
         Header: "FGA",
         accessor: "fga",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -64,7 +64,7 @@ export const columns =  [
         Header: "TPM",
         accessor: "tpm",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -72,7 +72,7 @@ export const columns =  [
         Header: "TPA",
         accessor: "tpa",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -80,7 +80,7 @@ export const columns =  [
         Header: "FTM",
         accessor: "ftm",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -88,7 +88,7 @@ export const columns =  [
         Header: "FTA",
         accessor: "fta",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -96,7 +96,7 @@ export const columns =  [
         Header: "OREB",
         accessor: "oreb",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -104,7 +104,7 @@ export const columns =  [
         Header: "DREB",
         accessor: "dreb",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -112,7 +112,7 @@ export const columns =  [
         Header: "AST",
         accessor: "ast",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -120,7 +120,7 @@ export const columns =  [
         Header: "TOV",
         accessor: "tov",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -128,7 +128,7 @@ export const columns =  [
         Header: "STL",
         accessor: "stl",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -136,7 +136,7 @@ export const columns =  [
         Header: "BLK",
         accessor: "blk",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
@@ -144,7 +144,7 @@ export const columns =  [
         Header: "PF",
         accessor: "pf",
         style: {
-          textAlign: "right"
+          textAlign: "center"
         },
         minWidth: 60
       },
