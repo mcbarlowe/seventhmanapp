@@ -7,6 +7,7 @@ import TeamTable from './components/team_table/team_table';
 import PlayerPossessionTable from './components/player_table/player_possession_table';
 import TeamPossessionTable from './components/team_table/team_possession_table';
 import PlayerAdvancedTable from './components/player_table/player_advanced';
+import TeamAdvancedTable from './components/team_table/team_advanced_table';
 import ReactGA from 'react-ga';
 import './App.css';
 
@@ -131,7 +132,10 @@ class App extends Component {
                 />
               </TabPanel>
               <TabPanel>
-                <p style={pStyle}>Why are we talking about advanced stats for teams when the only stat we need is wins baby!</p>
+                <TeamAdvancedTable
+                  seasonSelect={seasonSelect}
+                  teamSelect={teamSelect}
+                />
               </TabPanel>
               <TabPanel>
                 <p style={pStyle}>Single Season RAPM</p>
