@@ -76,9 +76,9 @@ class App extends Component {
           <TabPanel>
             <Tabs>
               <TabList>
-                <Tab>Per Game Stats</Tab>
-                <Tab>Possession Stats</Tab>
-                <Tab>Advanced Stats</Tab>
+                <Tab>Per Game</Tab>
+                <Tab>Possession</Tab>
+                <Tab>Advanced</Tab>
                 <Tab>RAPM</Tab>
                 <Tab>3 Year RAPM</Tab>
               </TabList>
@@ -113,9 +113,9 @@ class App extends Component {
           <TabPanel>
             <Tabs>
               <TabList>
-                <Tab>Per Game Stats</Tab>
-                <Tab>Possession Stats</Tab>
-                <Tab>Advanced Stats</Tab>
+                <Tab>Per Game</Tab>
+                <Tab>Possession</Tab>
+                <Tab>Advanced</Tab>
                 <Tab>RAPM</Tab>
                 <Tab>3 Year RAPM</Tab>
               </TabList>
