@@ -113,3 +113,35 @@ a,a:hover,a:click, a:visited{
   text-decoration:none;
   color:inherit;
   }
+
+/*Styling for iPhone 6/7/8*/
+@media (min-width: 360px) {
+.player-table {
+    padding-left: 20px;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+    .input-form {
+        padding-left: 10px;
+    }
+    .tocInputBox {
+        max-width: 200px;
+        margin-left: 1px;
+        height: 30px;
+        font-size: 22px;
+    }
+    .tocformLabels {
+        margin-left: 1px;
+    }
+    .radioButtons {
+        padding-left: 1px;
+        display: flex;
+        flex-direction: column;
+    }
+    .rightMargin {
+        margin-right: 10px;
+    }
+    .leftMargin {
+        margin-left: 10px;
+    }
+}

@@ -81,3 +81,44 @@
     position:relative;
     top:1px;
 }
+.react-tabs__tab-list {
+    margin: 0 0 10px;
+    padding: 0;
+    border-color: radial-gradient(ellipse, #566D7E 50%, #646D7E 100%);
+}
+
+.react-tabs__tab--selected {
+    background: radial-gradient(ellipse, #566D7E 50%, #646D7E 100%);
+    color: hsla(34, 83%, 99%, 1);
+    border-radius: 5px 5px 0 0;
+}
+
+/*Styling for iPhone 6/7/8*/
+@media (min-width: 360px) {
+    #banner {
+        color: hsla(34, 83%, 99%, 1);
+        font-weight: 500;
+        font-size: 60px;
+        padding: 80px 20px;
+        line-height: 1;
+        text-align: center;
+        background: radial-gradient(ellipse, #566D7E 50%, #646D7E 100%);
+    }
+    .react-tabs__tab {
+          padding: 6px 6px;
+    }
+    .react-tabs__tab-list {
+        margin: 0 0 10px;
+        padding: 0;
+        border-color: radial-gradient(ellipse, #566D7E 50%, #646D7E 100%);
+    }
+
+    .react-tabs__tab--selected {
+        background: radial-gradient(ellipse, #566D7E 50%, #646D7E 100%);
+        color: hsla(34, 83%, 99%, 1);
+        border-radius: 5px 5px 0 0;
+    }
+
+
+}
+
