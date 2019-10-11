@@ -8,6 +8,7 @@ import PlayerPossessionTable from './components/player_table/player_possession_t
 import TeamPossessionTable from './components/team_table/team_possession_table';
 import PlayerAdvancedTable from './components/player_table/player_advanced';
 import TeamAdvancedTable from './components/team_table/team_advanced_table';
+import PlayerRapmTable from './components/player_table/player_single_year_rapm_table';
 import ReactGA from 'react-ga';
 import './App.css';
 
@@ -103,7 +104,10 @@ class App extends Component {
                 />
               </TabPanel>
               <TabPanel>
-                <p style={pStyle}>Single Season RAPM</p>
+                <PlayerRapmTable
+                  seasonSelect={seasonSelect}
+                  playerSelect={playerSelect}
+                />
               </TabPanel>
               <TabPanel>
                 <p style={pStyle}>3 Year RAPM</p>
