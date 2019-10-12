@@ -132,7 +132,6 @@ class App extends Component {
                 <Tab>Possession</Tab>
                 <Tab>Advanced</Tab>
                 <Tab>RAPM</Tab>
-                <Tab>3 Year RAPM</Tab>
               </TabList>
               <TabPanel>
                 <TeamTable
