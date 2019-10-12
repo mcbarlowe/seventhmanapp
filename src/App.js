@@ -9,6 +9,7 @@ import TeamPossessionTable from './components/team_table/team_possession_table';
 import PlayerAdvancedTable from './components/player_table/player_advanced';
 import TeamAdvancedTable from './components/team_table/team_advanced_table';
 import PlayerRapmTable from './components/player_table/player_single_year_rapm_table';
+import PlayerMultiRapmTable from './components/player_table/player_multi_year_rapm_table';
 import ReactGA from 'react-ga';
 import './App.css';
 
@@ -20,7 +21,8 @@ class App extends Component {
     this.state = {
       teamSelect: [],
       playerSelect: [],
-      seasonSelect: []
+      seasonSelect: [],
+      multiRapmSeasonSelect: []
     };
    }
 
@@ -44,10 +46,16 @@ class App extends Component {
       this.setState({ seasonSelect: data })
     })
     .catch(console.log);
+    fetch('https://stats.theseventhman.net/stats/api/v1/multirapmseasons/all', { method: 'get', mode: 'cors' })
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ multiRapmSeasonSelect: data })
+    })
+    .catch(console.log);
   }
 
   render() {
-    const {teamSelect, playerSelect, seasonSelect} = this.state
+    const {teamSelect, playerSelect, seasonSelect, multiRapmSeasonSelect} = this.state
     const pStyle = {padding: "10px", width: "60%"}
     if(!playerSelect.length)
       return null;
@@ -110,7 +118,10 @@ class App extends Component {
                 />
               </TabPanel>
               <TabPanel>
-                <p style={pStyle}>3 Year RAPM</p>
+                <PlayerMultiRapmTable
+                  seasonSelect={multiRapmSeasonSelect}
+                  playerSelect={playerSelect}
+                />
               </TabPanel>
             </Tabs>
           </TabPanel>

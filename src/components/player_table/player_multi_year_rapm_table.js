@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import PlayerRapmInputForm from './player_single_year_rapm_input_form';
+import PlayerMultiRapmInputForm from './player_multi_year_rapm_input_form';
 import ReactTable from 'react-table';
 import {CSVLink} from 'react-csv';
 import '../../../node_modules/react-table/react-table.css';
 import { columns } from './player_single_year_rapm_columns';
 
-class PlayerRapmTable extends Component {
+class PlayerMultiRapmTable extends Component {
 
   constructor(props) {
     super();
@@ -20,7 +20,7 @@ class PlayerRapmTable extends Component {
   }
 
   componentDidMount() {
-    fetch('https://stats.theseventhman.net/stats/api/v1/players/rapm/?&season=2019&player=', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v1/players/multirapm/?&season=2017-19&player=', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ data: data })
@@ -39,7 +39,7 @@ class PlayerRapmTable extends Component {
     return (
           <div>
             <div className="input-form">
-              <PlayerRapmInputForm
+              <PlayerMultiRapmInputForm
                 playerOptions={this.props.playerSelect}
                 seasonOptions={this.props.seasonSelect} onClick={this.setNewPlayerData}/>
               <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
@@ -58,4 +58,4 @@ class PlayerRapmTable extends Component {
   }
 }
 
-export default PlayerRapmTable
+export default PlayerMultiRapmTable
