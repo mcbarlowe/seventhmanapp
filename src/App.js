@@ -155,9 +155,6 @@ class App extends Component {
               <TabPanel>
                 <p style={pStyle}>Single Season RAPM</p>
               </TabPanel>
-              <TabPanel>
-                <p style={pStyle}>3 Year RAPM</p>
-              </TabPanel>
             </Tabs>
           </TabPanel>
           <TabPanel>
