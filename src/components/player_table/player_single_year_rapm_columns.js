@@ -6,9 +6,9 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    width: 150,
-    maxWidth: 150,
-    minWidth: 150
+    width: 200,
+    maxWidth: 200,
+    minWidth: 200
   },
   {
     Header: "Season",
