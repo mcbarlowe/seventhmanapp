@@ -6,9 +6,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        width: 75,
-        maxWidth: 75,
-        minWidth: 75
+        minWidth: 60
       },
       {
         Header: "Season",
@@ -26,7 +24,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "Wins",
@@ -34,7 +32,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "Points",
@@ -58,7 +56,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "FGM",
@@ -66,7 +64,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "FGA",
@@ -74,7 +72,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "TPM",
@@ -82,7 +80,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "TPA",
@@ -90,7 +88,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "FTM",
@@ -98,7 +96,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "FTA",
@@ -106,7 +104,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "OREB",
@@ -114,7 +112,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "DREB",
@@ -122,7 +120,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "AST",
@@ -130,7 +128,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "TOV",
@@ -138,7 +136,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "STL",
@@ -146,7 +144,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "BLK",
@@ -154,7 +152,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "BLKA",
@@ -162,7 +160,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "PF",
@@ -170,7 +168,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "PFD",
@@ -178,7 +176,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       },
       {
         Header: "+/-",
@@ -186,6 +184,6 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 50
       }
     ]

@@ -6,8 +6,6 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    width: 200,
-    maxWidth: 200,
     minWidth: 200
   },
   {
@@ -16,8 +14,6 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    width: 100,
-    maxWidth: 100,
     minWidth: 100
   },
   {
@@ -26,8 +22,6 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    width: 130,
-    maxWidth: 130,
     minWidth: 130
   },
   {
@@ -36,8 +30,6 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    width: 125,
-    maxWidth: 125,
     minWidth: 125
   },
   {
@@ -54,7 +46,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 50
   },
   {
     Header: "OREB%",
@@ -62,7 +54,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 65
   },
   {
     Header: "DREB%",
@@ -70,7 +62,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 65
   },
   {
     Header: "AST%",

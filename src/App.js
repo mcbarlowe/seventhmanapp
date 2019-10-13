@@ -10,6 +10,7 @@ import PlayerAdvancedTable from './components/player_table/player_advanced';
 import TeamAdvancedTable from './components/team_table/team_advanced_table';
 import PlayerRapmTable from './components/player_table/player_single_year_rapm_table';
 import PlayerMultiRapmTable from './components/player_table/player_multi_year_rapm_table';
+import TeamRapmTable from './components/team_table/team_single_year_rapm_table';
 import ReactGA from 'react-ga';
 import './App.css';
 
@@ -78,9 +79,14 @@ class App extends Component {
                the site is still in progress. If you
                have any questions or comments or notice any errors please email me at
                <a href='mailto:matt@theseventhman.net'> matt@seventhman.net</a> or
-               contact me on <a href='https://twitter.com/matt_barlowe'>Twitter</a>. Thanks
+               contact me on <a href='https://twitter.com/the7thmansite'>Twitter</a>. Thanks
                for coming and I hope you enjoy the site and find it useful.
            </p>
+           <p style={pStyle}> Also special thanks to <a href='https://twitter.com/rd11490'>Ryan Davis</a>.
+            Without his <a href='https://github.com/rd11490/NBA_Tutorials'>RAPM tutorials</a> this site
+            would not have RAPM near as quickly as it has. He also has a <a href='http://nbashotcharts.com/home'>site</a> which
+            is very good and you should check out as well.
+          </p>
           </TabPanel>
           <TabPanel>
             <Tabs>
@@ -152,7 +158,10 @@ class App extends Component {
                 />
               </TabPanel>
               <TabPanel>
-                <p style={pStyle}>Single Season RAPM</p>
+                <TeamRapmTable
+                  seasonSelect={seasonSelect}
+                  teamSelect={teamSelect}
+                />
               </TabPanel>
             </Tabs>
           </TabPanel>

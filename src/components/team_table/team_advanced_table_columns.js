@@ -6,9 +6,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        width: 75,
-        maxWidth: 75,
-        minWidth: 75
+        minWidth: 60
       },
       {
         Header: "Season",
@@ -16,9 +14,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        width: 100,
-        maxWidth: 100,
-        minWidth: 100
+        minWidth: 60
       },
       {
         Header: "eFG%",
@@ -42,7 +38,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 65
       },
       {
         Header: "FT/FGA",
@@ -58,7 +54,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 95
       },
       {
         Header: "Opp. TOV%",
@@ -66,7 +62,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 95
       },
       {
         Header: "DREB%",
@@ -74,7 +70,7 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 65
       },
       {
         Header: "Opp. FT/FGA",
@@ -82,6 +78,6 @@ export const columns =  [
         style: {
           textAlign: "center"
         },
-        minWidth: 60
+        minWidth: 100
       }
     ]

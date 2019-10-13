@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import PossInputForm from './team_possession_input_form';
+import TeamRapmInputForm from './team_single_year_rapm_input_form';
 import ReactTable from 'react-table';
 import {CSVLink} from 'react-csv';
 import '../../../node_modules/react-table/react-table.css';
-import { columns } from './team_possession_table_columns';
+import { columns } from './team_single_year_rapm_columns';
 
-class TeamPossessionTable extends Component {
+class TeamRapmTable extends Component {
   constructor(props) {
     super();
       this.state = {
@@ -19,7 +19,7 @@ class TeamPossessionTable extends Component {
   }
 
   componentDidMount() {
-    fetch('https://stats.theseventhman.net/stats/api/v1/teams/possession/?&season=2019&team=&agg=no', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v1/teams/rapm/?&season=2019&team=', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ data: data })
@@ -28,34 +28,32 @@ class TeamPossessionTable extends Component {
   }
 
   render() {
-    const pStyle = {"padding-left": "20px", width: "60%"}
     const prettyLink = {
       border:'none',
       outline:'none',
       color:'inherit',
       textDecoration: 'none'
     }
-    console.log(this.state);
+
     return (
             <div>
               <div className="input-form">
-                <PossInputForm
+                <TeamRapmInputForm
                   teamOptions={this.props.teamSelect}
                   seasonOptions={this.props.seasonSelect} onClick={this.setNewTeamData}/>
                 <button className="myButton"><CSVLink data={this.state.data} style={prettyLink} filename="nba_data.csv">Export Data to CSV</CSVLink></button>
               </div>
-              <p style={pStyle}> These stats are calculated per 100 possesions</p>
-              <div className="team-poss-table">
-              <ReactTable
-                columns={columns}
-                data={this.state.data}
-                resizable={false}
-                noDataText={"No Data Matched Your Criteria"}
-                defaultPageSize={30}></ReactTable>
+              <div className="player-table">
+                <ReactTable
+                  columns={columns}
+                  data={this.state.data}
+                  noDataText={"No Data Matched Your Criteria"}
+                  resizable={false}
+                  defaultPageSize={30}></ReactTable>
               </div>
             </div>
     )
   }
 }
 
-export default TeamPossessionTable
+export default TeamRapmTable

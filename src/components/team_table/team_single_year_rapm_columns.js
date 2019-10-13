@@ -1,14 +1,12 @@
 //This is the column headers for player single year rapm table
 export const columns =  [
   {
-    Header: "Player",
-    accessor: "player_name",
+    Header: "Team",
+    accessor: "abbreviation",
     style: {
       textAlign: "center"
     },
-    width: 200,
-    maxWidth: 200,
-    minWidth: 200
+    minWidth: 60
   },
   {
     Header: "Season",
@@ -16,19 +14,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    width: 100,
-    maxWidth: 100,
-    minWidth: 100
-  },
-  {
-    Header: "Teams",
-    accessor: "teams",
-    style: {
-      textAlign: "center"
-    },
-    width: 125,
-    maxWidth: 125,
-    minWidth: 125
+    minWidth: 60
   },
   {
     Header: "RAPM",

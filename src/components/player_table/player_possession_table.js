@@ -28,7 +28,7 @@ class PlayerPossessionTable extends Component {
     .catch(console.log);
   }
   render() {
-    const pStyle = {"padding-left": "100px", width: "60%"}
+    const pStyle = {"padding-left": "20px", width: "60%"}
     const prettyLink = {
       border:'none',
       outline:'none',
