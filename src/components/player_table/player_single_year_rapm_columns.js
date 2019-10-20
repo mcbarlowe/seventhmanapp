@@ -36,7 +36,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 70
   },
   {
     Header: "RAPM Rank",
@@ -44,7 +44,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 90
+    minWidth: 110
   },
   {
     Header: "Off RAPM",
@@ -52,7 +52,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 80
+    minWidth: 100
   },
   {
     Header: "Off RAPM Rank",
@@ -60,7 +60,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 120
+    minWidth: 140
   },
   {
     Header: "Def RAPM",
@@ -68,7 +68,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 80
+    minWidth: 100
   },
   {
     Header: "Def RAPM Rank",
@@ -76,6 +76,6 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 120
+    minWidth: 140
   },
 ]

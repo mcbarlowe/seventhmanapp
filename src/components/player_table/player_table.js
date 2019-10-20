@@ -47,6 +47,7 @@ class PlayerTable extends Component {
             <div className="player-table">
               <ReactTable
                 columns={columns}
+                defaultSortDesc={true}
                 data={this.state.data}
                 noDataText={"No Data Matched Your Criteria"}
                 resizable={false}

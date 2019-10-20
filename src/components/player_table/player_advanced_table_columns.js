@@ -38,7 +38,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 70
   },
   {
     Header: "TS%",
@@ -46,7 +46,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 50
+    minWidth: 60
   },
   {
     Header: "OREB%",
@@ -54,7 +54,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 65
+    minWidth: 80
   },
   {
     Header: "DREB%",
@@ -62,7 +62,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 65
+    minWidth: 80
   },
   {
     Header: "AST%",
@@ -70,7 +70,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 70
   },
   {
     Header: "STL%",
@@ -78,7 +78,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 70
   },
   {
     Header: "BLK%",
@@ -86,7 +86,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 70
   },
   {
     Header: "TOV%",
@@ -94,7 +94,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 70
   },
   {
     Header: "USG%",
@@ -102,7 +102,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 70
   },
   {
     Header: "OffRtg",
@@ -110,7 +110,7 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 75
   },
   {
     Header: "DefRtg",
@@ -118,6 +118,6 @@ export const columns =  [
     style: {
       textAlign: "center"
     },
-    minWidth: 60
+    minWidth: 75
   }
 ]

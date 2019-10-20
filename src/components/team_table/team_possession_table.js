@@ -48,6 +48,7 @@ class TeamPossessionTable extends Component {
                 columns={columns}
                 data={this.state.data}
                 resizable={false}
+                defaultSortDesc={true}
                 noDataText={"No Data Matched Your Criteria"}
                 defaultPageSize={30}></ReactTable>
               </div>

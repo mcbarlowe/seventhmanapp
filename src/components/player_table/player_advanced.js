@@ -48,6 +48,7 @@ class PlayerAdvancedTable extends Component {
                 columns={columns}
                 data={this.state.data}
                 noDataText={"No Data Matched Your Criteria"}
+                defaultSortDesc={true}
                 resizable={false}
                 minRows={5}
                 defaultPageSize={50}></ReactTable>

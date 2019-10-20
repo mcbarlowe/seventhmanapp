@@ -50,6 +50,7 @@ class PlayerPossessionTable extends Component {
               <ReactTable
                 columns={columns}
                 data={this.state.data}
+                defaultSortDesc={true}
                 noDataText={"No Data Matched Your Criteria"}
                 resizable={false}
                 minRows={5}
