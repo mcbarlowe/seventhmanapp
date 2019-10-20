@@ -29,7 +29,9 @@ class App extends Component {
    }
 
 
+  componentDidUpdate = () => ReactGA.pageview(window.location.pathname + window.location.search);
   componentDidMount() {
+    ReactGA.pageview(window.location.pathname + window.location.search);
     fetch('https://stats.theseventhman.net/stats/api/v1/teams/all/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
