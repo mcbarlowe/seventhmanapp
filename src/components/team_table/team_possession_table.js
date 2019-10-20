@@ -15,7 +15,6 @@ class TeamPossessionTable extends Component {
 
   setNewTeamData = data => {
     this.setState({ data: data });
-    console.log(this.state);
   }
 
   componentDidMount() {
@@ -35,7 +34,6 @@ class TeamPossessionTable extends Component {
       color:'inherit',
       textDecoration: 'none'
     }
-    console.log(this.state);
     return (
             <div>
               <div className="input-form">

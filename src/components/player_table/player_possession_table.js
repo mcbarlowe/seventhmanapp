@@ -35,7 +35,6 @@ class PlayerPossessionTable extends Component {
       color:'inherit',
       textDecoration: 'none'
     }
-    console.log(this.state);
 
     return (
           <div>

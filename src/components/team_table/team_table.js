@@ -15,7 +15,6 @@ class TeamTable extends Component {
 
   setNewTeamData = data => {
     this.setState({ data: data });
-    console.log(this.state);
   }
 
   componentDidMount() {

@@ -34,7 +34,6 @@ class PlayerRapmTable extends Component {
       color:'inherit',
       textDecoration: 'none'
     }
-    console.log(this.state);
 
     return (
           <div>

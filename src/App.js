@@ -11,6 +11,7 @@ import TeamAdvancedTable from './components/team_table/team_advanced_table';
 import PlayerRapmTable from './components/player_table/player_single_year_rapm_table';
 import PlayerMultiRapmTable from './components/player_table/player_multi_year_rapm_table';
 import TeamRapmTable from './components/team_table/team_single_year_rapm_table';
+import ShotChart from './components/shot_charts/shot_charts';
 import ReactGA from 'react-ga';
 import './App.css';
 
@@ -166,7 +167,11 @@ class App extends Component {
             </Tabs>
           </TabPanel>
           <TabPanel>
-            <p style={pStyle}>Shot Charts and things of that nature will go here</p>
+            <ShotChart
+              seasonSelect={seasonSelect}
+              teamSelect={teamSelect}
+              playerSelect={playerSelect}
+            />
           </TabPanel>
           <TabPanel>
             <p style={pStyle}>Plan to write things about basketball. It will be genius but you won't understand it so you'll tell all your friends it sucks</p>
