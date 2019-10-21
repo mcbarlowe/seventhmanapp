@@ -59,7 +59,6 @@ class ShotChart extends Component {
                           .startAngle(90 * (3.14/180)) //converting from degs to radians
                           .endAngle(270 * (3.14/180)) //just radians
 
-
     var rightRestrictedAreaCircle = d3.arc()
                           .innerRadius(64)
                           .outerRadius(65)
@@ -83,22 +82,20 @@ class ShotChart extends Component {
 
 
 
+    var round = (value, precision)  => {
+        const multiplier = 10 ** (precision || 0);
+        return Math.round(value * multiplier) / multiplier;
+    }
 
     if(this.state.data.length > 0){
-      console.log(this.state.data);
 
       var xScale = d3.scaleLinear().domain([-250, 250]).range([0,800]);
       var yScale = d3.scaleLinear().domain([-50, 450]).range([800, 0]);
       var hex = hexbin().x(d => xScale(d.x)).y(d => yScale(d.y)).radius(10);
       var data = hex(this.state.data);
       var filteredData = data.filter( x => {return x.length >= 2});
-      console.log(hex(this.state.data)[0].reduce( ( sum, { made } ) => sum + made , 0));
-      console.log(hex(this.state.data));
       var radius = d3.scaleSqrt([0, d3.max(data, d => d.length)], [0, hex.radius(10) * Math.SQRT2])
-      var color = d3.scaleLinear().domain([0,1]).range(['#5458A2', 'red']);
-      console.log(hex(data).reduce((a, b) => +a + +b.made, 0)/hex(data).reduce((a, b) => +a + +b.attempted, 0))
-
-
+      var color = d3.scaleLinear().domain([-0.5,0.5]).range(['blue', 'red']);
       var test = svgContainer.selectAll("path").data(filteredData);
 
       test.exit().remove();
@@ -107,9 +104,14 @@ class ShotChart extends Component {
         .attr("class", "hex")
         .attr("transform", d => `translate(${d.x},${d.y})`)
         .attr("d", d => hex.hexagon(radius(d.length) * 3.5))
-        .attr("fill",  d => color(d.reduce((a, b) => +a + +b.made, 0)/d.reduce((a, b) => +a + +b.attempted, 0)))
-        .append("svg:title")
-         .text(d => d.reduce((a, b) => +a + +b.made, 0)/d.reduce((a, b) => +a + +b.attempted, 0));
+        .attr("fill",  d => color(round(d.reduce((a, b) => +a + +b.made, 0)/d.reduce((a, b) => +a + +b.attempted, 0) -
+                            d.reduce((a, b) => +a + +b.lg_made, 0)/d.reduce((a, b) => +a + +b.lg_attempted, 0), 2)))
+      .append("svg:title")
+         .text(d => "".concat("FG% above average: ", round(d.reduce((a, b) => +a + +b.made, 0)/d.reduce((a, b) => +a + +b.attempted, 0) -
+                                                     d.reduce((a, b) => +a + +b.lg_made, 0)/d.reduce((a, b) => +a + +b.lg_attempted, 0), 2))
+                      + "\nAttempts: ".concat(d.reduce((a, b) => +a + +b.attempted, 0))
+                      + "\nLg. Avg. FG%: ".concat(round(d.reduce((a, b) => +a + +b.lg_made, 0)/d.reduce((a, b) => +a + +b.lg_attempted, 0), 2))
+                      + "\nPlayer/Team FG%: ".concat(round(d.reduce((a, b) => +a + +b.made, 0)/d.reduce((a, b) => +a + +b.attempted, 0), 2)));
       /*TODO add titles to charts later
       svgContainer.append("text")
         .attr("x", (800 / 2))
