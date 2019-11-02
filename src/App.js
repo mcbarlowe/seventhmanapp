@@ -63,6 +63,7 @@ class App extends Component {
     const pStyle = {padding: "10px", width: "60%"}
     if(!playerSelect.length)
       return null;
+    console.log(this.state);
     return (
     <div>
       <div>

@@ -6,7 +6,7 @@ class PlayerMultiRapmInputForm extends Component {
   constructor(props) {
     super();
       this.state = {
-        season: [{label: '2017-19', value: '2017-19'}],
+        season: [],
         player: [],
       };
   }

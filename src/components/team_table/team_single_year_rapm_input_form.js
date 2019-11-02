@@ -6,7 +6,7 @@ class TeamRapmInputForm extends Component {
   constructor(props) {
     super();
       this.state = {
-        season: [{label: '2019', value: '2019'}],
+        season: [],
         team: [],
       };
   }

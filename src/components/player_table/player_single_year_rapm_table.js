@@ -20,7 +20,7 @@ class PlayerRapmTable extends Component {
   }
 
   componentDidMount() {
-    fetch('https://stats.theseventhman.net/stats/api/v1/players/rapm/?&season=2019&player=', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v1/players/rapm/?&season=2020&player=', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ data: data })

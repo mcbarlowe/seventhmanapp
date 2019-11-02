@@ -6,7 +6,7 @@ class ShotChartsInputForm extends Component {
   constructor(props) {
     super();
       this.state = {
-        season: [{label: '2019', value: '2019'}],
+        season: [{label: '2020', value: '2020'}],
         player: [{label: 'Stephen Curry', value: '201939'}],
         team: [],
       };

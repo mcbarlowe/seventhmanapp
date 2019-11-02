@@ -18,7 +18,7 @@ class TeamPossessionTable extends Component {
   }
 
   componentDidMount() {
-    fetch('https://stats.theseventhman.net/stats/api/v1/teams/possession/?&season=2019&team=&agg=no', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v1/teams/possession/?&season=2020&team=&agg=no', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ data: data })
