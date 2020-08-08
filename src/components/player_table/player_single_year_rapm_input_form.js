@@ -30,7 +30,7 @@ class PlayerRapmInputForm extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    let result_url ='https://stats.theseventhman.net/stats/api/v1/players/rapm/?';
+    let result_url ='https://stats.theseventhman.net/stats/api/v2/players/rapm/?';
     result_url = result_url + '&player=' + this.state.player.map(player => (player.value)).join('+');
     result_url = result_url + '&season=' + this.state.season.map(season => (season.value)).join('+');
     fetch(result_url, { method: 'get', mode: 'cors' })

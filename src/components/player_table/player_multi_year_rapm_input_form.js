@@ -30,9 +30,9 @@ class PlayerMultiRapmInputForm extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    let result_url ='https://stats.theseventhman.net/stats/api/v1/players/multirapm/?';
+    let result_url ='https://stats.theseventhman.net/stats/api/v2/players/multirapm/?';
     result_url = result_url + '&player=' + this.state.player.map(player => (player.value)).join('+');
-    result_url = result_url + '&season=' + this.state.season.map(season => (season.value)).join('+');
+    result_url = result_url + '&min_season=' + this.state.season.map(season => (season.value.substring(0, 4))).join('+');
     fetch(result_url, { method: 'get', mode: 'cors' })
       .then(res => res.json())
       .then((results) => {this.props.onClick(results)} )
@@ -41,7 +41,7 @@ class PlayerMultiRapmInputForm extends Component {
   render() {
     const season_arr = this.props.seasonOptions;
     const player_arr = this.props.playerOptions;
-    const seasons = season_arr.map( season => ({value: String(season.season), label: String(season.season)}) );
+    const seasons = season_arr.map( season => ({value: String(season.seasons), label: String(season.seasons)}) );
     const players = player_arr.map( player => ({value: player.player_id, label: player.player_name}) );
     return (
       <form className = "playerForm" onSubmit={this.onSubmit}>

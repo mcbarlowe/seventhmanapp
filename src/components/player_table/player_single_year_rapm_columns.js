@@ -31,6 +31,14 @@ export const columns =  [
     minWidth: 125
   },
   {
+    Header: "GP",
+    accessor: "gp",
+    style: {
+      textAlign: "center"
+    },
+    minWidth: 125
+  },
+  {
     Header: "RAPM",
     accessor: "rapm",
     style: {

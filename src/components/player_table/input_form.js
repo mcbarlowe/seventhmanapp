@@ -50,7 +50,7 @@ class InputForm extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    let result_url ='https://stats.theseventhman.net/stats/api/v1/players/?';
+    let result_url ='https://stats.theseventhman.net/stats/api/v2/players/?';
     result_url = result_url + '&player=' + this.state.player.map(player => (player.value)).join('+');
     result_url = result_url + '&season=' + this.state.season.map(season => (season.value)).join('+');
     result_url = result_url + '&team=' + this.state.team.map(team => (team.value)).join('+');

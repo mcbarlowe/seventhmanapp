@@ -20,7 +20,7 @@ class PlayerAdvancedTable extends Component {
   }
 
   componentDidMount() {
-    fetch('https://stats.theseventhman.net/stats/api/v1/players/advanced/?&season=2020&player=', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v2/players/advanced/?&season=2020&player=', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ data: data })

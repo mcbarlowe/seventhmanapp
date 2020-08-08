@@ -32,25 +32,25 @@ class App extends Component {
   componentDidUpdate = () => ReactGA.pageview(window.location.pathname + window.location.search);
   componentDidMount() {
     ReactGA.pageview(window.location.pathname + window.location.search);
-    fetch('https://stats.theseventhman.net/stats/api/v1/teams/all/', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v2/teams/all/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ teamSelect: data })
     })
     .catch(console.log);
-    fetch('https://stats.theseventhman.net/stats/api/v1/players/distinct/', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v2/players/distinct/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ playerSelect: data })
     })
     .catch(console.log);
-    fetch('https://stats.theseventhman.net/stats/api/v1/seasons/all/', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v2/seasons/all/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ seasonSelect: data })
     })
     .catch(console.log);
-    fetch('https://stats.theseventhman.net/stats/api/v1/multirapmseasons/all/', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v2/multirapmseasons/all/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ multiRapmSeasonSelect: data })
@@ -63,7 +63,6 @@ class App extends Component {
     const pStyle = {padding: "10px", width: "60%"}
     if(!playerSelect.length)
       return null;
-    console.log(this.state);
     return (
     <div>
       <div>

@@ -2,7 +2,7 @@
 export const columns =  [
   {
     Header: "Team",
-    accessor: "abbreviation",
+    accessor: "team_abbrev",
     style: {
       textAlign: "center"
     },
