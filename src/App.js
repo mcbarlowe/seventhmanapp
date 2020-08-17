@@ -38,12 +38,6 @@ class App extends Component {
       this.setState({ teamSelect: data })
     })
     .catch(console.log);
-    fetch('https://stats.theseventhman.net/stats/api/v2/players/distinct/', { method: 'get', mode: 'cors' })
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({ playerSelect: data })
-    })
-    .catch(console.log);
     fetch('https://stats.theseventhman.net/stats/api/v2/seasons/all/', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
@@ -54,6 +48,12 @@ class App extends Component {
     .then(res => res.json())
     .then((data) => {
       this.setState({ multiRapmSeasonSelect: data })
+    })
+    .catch(console.log);
+    fetch('https://stats.theseventhman.net/stats/api/v2/players/distinct/', { method: 'get', mode: 'cors' })
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ playerSelect: data })
     })
     .catch(console.log);
   }
