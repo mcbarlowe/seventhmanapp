@@ -2,7 +2,7 @@
 export const columns =  [
   {
     Header: "Player",
-    accessor: "display_first_last",
+    accessor: "player_name",
     style: {
       textAlign: "center"
     },
