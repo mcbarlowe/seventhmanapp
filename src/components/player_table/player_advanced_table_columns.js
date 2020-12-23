@@ -33,8 +33,16 @@ export const columns =  [
     minWidth: 125
   },
   {
+    Header: "GP",
+    accessor: "gp",
+    style: {
+      textAlign: "center"
+    },
+    minWidth: 70
+  },
+  {
     Header: "eFG%",
-    accessor: "efg_percentage",
+    accessor: "efg_percent",
     style: {
       textAlign: "center"
     },
@@ -42,7 +50,7 @@ export const columns =  [
   },
   {
     Header: "TS%",
-    accessor: "true_shooting_percentage",
+    accessor: "ts_percent",
     style: {
       textAlign: "center"
     },
@@ -50,7 +58,7 @@ export const columns =  [
   },
   {
     Header: "OREB%",
-    accessor: "oreb_percentage",
+    accessor: "oreb_percent",
     style: {
       textAlign: "center"
     },
@@ -58,7 +66,7 @@ export const columns =  [
   },
   {
     Header: "DREB%",
-    accessor: "dreb_percentage",
+    accessor: "dreb_percent",
     style: {
       textAlign: "center"
     },
@@ -66,7 +74,7 @@ export const columns =  [
   },
   {
     Header: "AST%",
-    accessor: "ast_percentage",
+    accessor: "ast_percent",
     style: {
       textAlign: "center"
     },
@@ -74,7 +82,7 @@ export const columns =  [
   },
   {
     Header: "STL%",
-    accessor: "stl_percentage",
+    accessor: "stl_percent",
     style: {
       textAlign: "center"
     },
@@ -82,7 +90,7 @@ export const columns =  [
   },
   {
     Header: "BLK%",
-    accessor: "blk_percentage",
+    accessor: "blk_percent",
     style: {
       textAlign: "center"
     },
@@ -90,7 +98,7 @@ export const columns =  [
   },
   {
     Header: "TOV%",
-    accessor: "tov_percentage",
+    accessor: "tov_percent",
     style: {
       textAlign: "center"
     },
@@ -98,7 +106,7 @@ export const columns =  [
   },
   {
     Header: "USG%",
-    accessor: "usg_percentage",
+    accessor: "usg_percent",
     style: {
       textAlign: "center"
     },

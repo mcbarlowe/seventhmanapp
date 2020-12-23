@@ -20,7 +20,7 @@ class PlayerMultiRapmTable extends Component {
   }
 
   componentDidMount() {
-    fetch('https://stats.theseventhman.net/stats/api/v2/players/multirapm/?&min_season=2018&player=', { method: 'get', mode: 'cors' })
+    fetch('https://stats.theseventhman.net/stats/api/v2/players/multirapm/?&min_season=2019&player=', { method: 'get', mode: 'cors' })
     .then(res => res.json())
     .then((data) => {
       this.setState({ data: data })
